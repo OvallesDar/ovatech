@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 
 const clients = [
   {
-    image: "/clientAromas.png",
-    alt: "Aromas Logo",
-    title: "Aromas Simulator",
+    image: "/clientLimaService.png",
+    alt: "Lima Service Logo",
+    title: "Agencia Lima Service",
     works: "Desarrollo Web",
-    href: "https://aromas-six.vercel.app/",
+    href: "https://www.agencialimaservice.com/",
   },
   {
     image: "/clientDrVictoria.png",
@@ -22,7 +22,7 @@ const clients = [
     alt: "Belanova Inc Logo",
     title: "Belanova Inc",
     works: "Desarrollo Web",
-    href: "/",
+    href: "https://www.belanovainc.com/",
   },
   {
     image: "/clientSantaAna.png",

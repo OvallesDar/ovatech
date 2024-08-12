@@ -32,7 +32,7 @@ export default function CardClientsLogo({ client }: CardClientsLogoProps) {
       },
     }} className="w-72 h-72 relative bg-gradient-to-br to-primary from-secondary flex justify-center items-center rounded-md">
       <Image
-        className="w-5/6 h-auto"
+        className="w-5/6 h-auto custom-white drop-shadow-custom-white"
         src={client.image}
         alt={client.alt}
         width={780}

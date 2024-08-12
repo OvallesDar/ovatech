@@ -1,49 +1,38 @@
-"use client"
-import { useRef } from 'react';
-import emailjs from '@emailjs/browser';
-import { motion } from 'framer-motion';
+"use client";
+import Dialog from "@/components/Dialog";
+import Loading from "@/components/Loading";
+import useForm from "@/hooks/useForm";
+import { motion } from "framer-motion";
+
+const NEXT_PUBLIC_SERVICE = "service_9nzx7rd";
+const NEXT_PUBLIC_TEMPLATE = "template_6czfggk";
+const NEXT_PUBLIC_KEY = "vmCgyrY2vOPCbKN3X";
 
 export default function FormContact() {
-
-    const form = useRef<HTMLFormElement>(null)
-
-    const sendEmail = (event: React.FormEvent<HTMLFormElement>) => {
-      event.preventDefault();
-      if(form.current)
-      emailjs
-        .sendForm('service_9nzx7rd', 'template_6czfggk', form.current, {
-          publicKey: 'vmCgyrY2vOPCbKN3X',
-        })
-        .then(
-          () => {
-            alert("Gracias por tu mensaje, pronto nos pondremos en contacto contigo.")
-            form.current?.reset();
-          },
-          (error) => {
-            alert("Tu mensaje no ha sido enviado por favor intentalo de nuevo o ponte en contacto con nosotros por otro medio")
-            form.current?.reset();
-            console.log('FAILED...', error.text);
-          },
-        );
-    };
+  const { loading, successMessage, refForm, sendEmail, handleSuccesMessage } =
+    useForm({ NEXT_PUBLIC_SERVICE, NEXT_PUBLIC_TEMPLATE, NEXT_PUBLIC_KEY });
 
   return (
     <motion.div
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: true, amount: 0.5 }}
-    transition={{
-      delay: 0.2,
-      duration: 1.5,
-    }}
-    variants={{
-      hidden: {
-        opacity: 0,
-      },
-      visible: {
-        opacity: 1,
-      },
-    }} className="w-full lg:w-1/2 flex flex-col gap-5">
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{
+        delay: 0.2,
+        duration: 1.5,
+      }}
+      variants={{
+        hidden: {
+          opacity: 0,
+        },
+        visible: {
+          opacity: 1,
+        },
+      }}
+      className="w-full lg:w-1/2 flex flex-col gap-5 relative"
+    >
+      {loading ? <Loading /> : null}
+      {successMessage ? <Dialog handleSuccesMessage={handleSuccesMessage}/> : null}
       <div className="flex flex-col gap-2">
         <h3 className="text-3xl font-extralight text-secondary">Contáctanos</h3>
         <h4 className="text-3xl font-extralight">Déjanos un mensaje</h4>
@@ -52,7 +41,7 @@ export default function FormContact() {
           cotizaciones.
         </p>
       </div>
-      <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-2">
+      <form ref={refForm} onSubmit={sendEmail} className="flex flex-col gap-2">
         <input
           required
           className="border-slate-500 border-solid border-[1px] p-2 rounded-sm"

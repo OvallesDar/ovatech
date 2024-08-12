@@ -18,6 +18,9 @@ const config = {
       },
     },
     extend: {
+      dropShadow: {
+        "custom-white": "0 0 10px rgba(255, 255, 255, 0.3)"
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
