@@ -4,18 +4,11 @@ import { motion } from "framer-motion";
 
 const clients = [
   {
-    image: "/clientLimaService.png",
-    alt: "Lima Service Logo",
-    title: "Agencia Lima Service",
+    image: "/clientEsenciaCanaria.png",
+    alt: "Quesería Esencia Canaria Logo",
+    title: "Quesería Esencia Canaria",
     works: "Desarrollo Web",
-    href: "https://www.agencialimaservice.com/",
-  },
-  {
-    image: "/clientDrVictoria.png",
-    alt: "D&R Victoria Logo",
-    title: "D&R Victoria",
-    works: "Desarrollo Web - Marketing Digital",
-    href: "https://www.drvictoriaperu.com/",
+    href: "https://queseriaesenciacanaria.es/",
   },
   {
     image: "/clientBelanova.png",
@@ -25,11 +18,11 @@ const clients = [
     href: "https://www.belanovainc.com/",
   },
   {
-    image: "/clientSantaAna.png",
-    alt: "Santa Ana Garachico Logo",
-    title: "Santa Ana Garachico",
+    image: "/clientCafeterieLauka.png",
+    alt: "Cafetería LauKa Logo",
+    title: "Cafetería LauKa",
     works: "Desarrollo Web",
-    href: "https://santaanagarachico.vercel.app/",
+    href: "https://cafeterialauka.es/",
   },
 ];
 
